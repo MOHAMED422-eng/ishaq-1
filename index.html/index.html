@@ -19,6 +19,18 @@
     justify-content:center;
     background:var(--bg-gradient);
   }
+
+  /* TOP RIGHT CREDIT TEXT */
+  .credit{
+    position:fixed;
+    top:12px;
+    right:14px;
+    font-size:13px;
+    color:#fff;
+    font-weight:600;
+    text-shadow:0 1px 3px rgba(0,0,0,0.4);
+  }
+
   .card{
     background: rgba(255,255,255,0.95);
     width:360px;
@@ -53,6 +65,10 @@
 </style>
 </head>
 <body>
+
+  <!-- TOP RIGHT TEXT -->
+  <div class="credit">Created by <strong>A. Mohamed Sulthan Ishaq</strong></div>
+
   <div class="card">
     <h2>Asset Tools — Login</h2>
     <input id="username" placeholder="Username" />
