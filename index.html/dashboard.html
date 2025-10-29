@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard — Asset Tools</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+  :root{
+    --bg-gradient: linear-gradient(135deg,#6a11cb,#2575fc);
+    --accent:#ff9a00;
+  }
+  html,body{height:100%;margin:0;font-family:Inter,Arial,Helvetica,sans-serif;}
+  body{background:var(--bg-gradient);display:flex;align-items:center;justify-content:center;padding:40px;color:#fff;}
+  .container{text-align:center;max-width:920px;width:100%;}
+  .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;}
+  .logo-wrap{display:flex;gap:12px;align-items:center}
+  .logo-badge{width:48px;height:48px;border-radius:50%;background:#6a11cb;display:flex;align-items:center;justify-content:center;border:4px solid #ff9a00;box-shadow:0 6px 18px rgba(0,0,0,0.3)}
+  .logo-badge svg{width:28px;height:28px}
+  .title{font-weight:600;color:#fff;font-size:18px}
+  .logout{background:#fff;border-radius:10px;padding:10px 14px;border:none;cursor:pointer;font-weight:700;color:#000}
+  h1{font-size:28px;margin:6px 0 16px}
+  .grid{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+  .card{
+    background:#fff;border-radius:12px;padding:26px;width:300px;box-shadow:0 12px 36px rgba(0,0,0,0.15);color:#000;cursor:pointer;
+    transition:transform .18s,box-shadow .18s;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,0.18)}
+  .card h3{margin:6px 0 10px}
+  .card p{margin:0;color:#444;font-size:14px}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="logo-wrap">
+        <div class="logo-badge" title="Asset Strengthener">
+          <!-- SVG lightning logo -->
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="#6a11cb" stroke="#ff9a00" stroke-width="6"/>
+            <path d="M55 15L30 55H50L45 85L70 45H50L55 15Z" fill="#ff9a00"/>
+          </svg>
+        </div>
+        <div class="title">Asset Tools</div>
+      </div>
+      <button class="logout" id="logoutBtn">Logout</button>
+    </div>
+
+    <h1>Welcome — choose a tool</h1>
+
+    <div class="grid">
+      <div class="card" onclick="location.href='asset-strengthener.html'">
+        <h3>🔧 Asset Strengthener</h3>
+        <p>Wraps/pseudo-encodes assets for delivery (quoted-printable & insertions).</p>
+      </div>
+
+      <div class="card" onclick="location.href='random-word-generator.html'">
+        <h3>🔤 Random Word Generator</h3>
+        <p>Generate industry-related words with inserted random strings.</p>
+      </div>
+    </div>
+  </div>
+
+<script>
+if(sessionStorage.getItem('logged') !== 'yes') location.href = 'index.html';
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  sessionStorage.clear();
+  location.href = 'index.html';
+});
+</script>
+</body>
+</html>
